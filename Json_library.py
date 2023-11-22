@@ -12,14 +12,14 @@ data = {
     'is_student': True,
 }
 
-#This opens the file as json_file and writes to the file.
+#Opening the file and Writing data to the file
 with open('data.json','w') as json_file:
 
     json.dump(data,json_file,indent=4)
 
 print('Data has been written to data.json')
 
-#This allows you to open the file succesfully and able to read.
+#Reading data from a JSON file
 with open('data.json','r') as json_file:
 
     loaded_data = json.load(json_file)
@@ -27,11 +27,11 @@ with open('data.json','r') as json_file:
 print("Successfully able to read data.json")
 print(loaded_data)
 
-#Modify the Json data. we add a string to append.
+#To modify the laoded data, append a string to the end 
 loaded_data['age'] = 27
-loaded_data['interests'].append('sports')
+loaded_data['interests'].append('games')
 
-#We modify the data back to the JSON file.
+#Writing modified data back to the same file
 with open('data.json', 'w') as json_file:
     
     json.dump(loaded_data, json_file, indent=4)
